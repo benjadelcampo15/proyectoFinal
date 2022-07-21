@@ -5,17 +5,15 @@ from django.contrib.auth.models import User
 
 from .models import Avatar
 
-class NuevoCurso(forms.Form):
 
-    nombre = forms.CharField(max_length=30,label="Curso")
-    comision = forms.IntegerField(min_value=0)
 
-class EstudianteFormulario(forms.Form):
 
-    titulo = forms.CharField(max_length=30)
-    cuerpo = forms.CharField(max_length=30)
+class posteoCrear(forms.Form):
+    titulo = forms.CharField(max_length=20)
+    cuerpo = forms.CharField(max_length=200)   
     fecha = forms.DateField()
-    foto = forms.ImageField()
+    imagen = forms.ImageField()
+    
     
 
 roles = [("usuario", "usuario"), ("administrador", "administrador")]
@@ -32,27 +30,5 @@ class UserRegisterForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2', 'first_name', 'last_name']
 
-        # help_texts = {k:"" for k in fields}
+      
 
-class UserEditForm(UserCreationForm):
-
-    email = forms.EmailField(label="Email")
-    password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput, required=False) # la contraseña no se vea
-    password2 = forms.CharField(label="Confirmar contraseña", widget=forms.PasswordInput, required=False)
-
-    first_name = forms.CharField(label="Nombre")
-    last_name = forms.CharField(label="Apellido")
-
-    class Meta:
-        model = User
-        fields = ['email', 'password1', 'password2', 'first_name', 'last_name']
-
-        help_texts = {k:"" for k in fields}
-
-class AvatarForm(forms.Form):
-
-    imagen = forms.ImageField(label="Imagen", required=False)
-
-    class Meta:
-        model = Avatar
-        fields = ['imagen']

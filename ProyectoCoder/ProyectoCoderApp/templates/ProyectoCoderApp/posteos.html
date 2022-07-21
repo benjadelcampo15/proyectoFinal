@@ -1,17 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% for posteo in posteos %}
+{% extends 'ProyectoCoderApp/base.html' %}
+{% load static %}
+{% block tituloPagina %}
+Register - App Coder
+{% endblock %}
+{% block b2 %}
 
-    {{posteo}}
-    
-    
-    {% endfor %}
-</body>
-</html>
+<section class="bg-light py-5">
+    <div class="container px-5">
+       
+        <ul class="posteos">
+
+            {% for posteo in posteos %}
+
+            <li> {{posteo.titulo}}</li>
+            <li> {{posteo.cuerpo}}</li>
+            <li>{{posteo.fecha}}</li>
+            <li><img src="{{posteo.imagen}}" ></li>
+            
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+{% endblock %}
