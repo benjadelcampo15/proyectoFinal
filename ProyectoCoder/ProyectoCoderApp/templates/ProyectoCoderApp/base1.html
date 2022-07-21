@@ -1,0 +1,125 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/quienessomos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ubicacion1.css' %}">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@200;400&display=swap" rel="stylesheet">
+    <script defer src="js/app.js"></script>
+
+    <title>{%block tituloPagina%} {%endblock%}</title>
+</head>
+
+<body>
+    <header class="topheader">
+        <nav class="topnav">
+            <a href="#" class="logo">
+                <img src="https://campoganadero.com/wp-content/uploads/2020/09/toro.jpg" id="logo" />
+            </a>
+            <button class="open-menu" aria-label="Abrir menú">
+                <img src="media/hamburger-icon.svg" alt="abrir menú" />
+            </button>
+            <ul class="menu">
+                <button class="close-menu" aria-label="Cerrar menú">
+                    <img src="media/close-icon.svg" alt="cerrar menú" />
+                </button>
+
+                
+                <li><a href="{% url 'posteos' %}"id="menuLink">Posteos</a></li>
+                
+                
+
+
+                {% if user.is_authenticated %}
+                
+
+
+                <li><a href="{% url 'crear_estudiante' %}" id="menuLink">Crear Posteos</a></li>
+                <li><a href=""></a> Hola, <b>{{user.username}}</b>!</p></li>
+                <li><a href="{% url 'logout' %}" id="menuLink">Cerrar sesion</a></li>
+                
+
+
+                {% else %}
+
+
+                <li><a href="{% url 'login' %}" id="menuLink">Inicar Sesion</a></li>
+                <li><a href="{% url 'register' %}" id="menuLink">Registrarse</a></li>
+
+                {%endif%}
+
+
+
+
+            </ul>
+
+
+           
+            <br>
+
+            <br>
+
+
+        </nav>
+
+
+       
+    </header>
+
+
+    <body>
+        
+
+        {% block b2 %}
+
+        {% endblock %}
+        
+
+
+        
+    
+
+
+    </body>
+ 
+
+
+   
+    
+   
+
+    <footer>
+
+        <h2 class="info">¿Necesitas mas informacion?</h2>
+
+        <section class="footer">
+
+            <a href="https://api.whatsapp.com/send?phone=542615372590"><img class="wp" src="media/whatsapp.png"
+                    alt=""></a>
+
+            <h4>Puxcuguay@gmail.com</h4>
+        </section>
+
+
+
+
+
+
+    </footer>
+</body>
+
+</html>

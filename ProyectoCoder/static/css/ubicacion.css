@@ -1,0 +1,34 @@
+.ubicacion-titulo {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 25px;
+    color: var(--primary-color);
+}
+#div-ubicaciones{
+    padding-top: 3vh;
+    color: white;
+}
+.imagen-ubicacion{
+    width: 50vw;
+}
+
+@media (min-width: 950px) {
+    .ubicacion-titulo {
+        font-size: 40px;
+        margin: 35px 0;
+        color: var(--primary-color);
+    }
+
+    #div-ubicaciones{
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        }
+    
+    .imagen-ubicacion{
+        width: 30vw;
+    }
+
+}

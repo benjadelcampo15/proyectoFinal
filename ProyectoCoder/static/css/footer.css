@@ -1,0 +1,32 @@
+footer{
+    background-color: var(--primary-color);
+    color: white;
+    height: 20vh;
+    text-align: center;
+    width: 99%;
+    margin: 0%;
+    position: absolute;
+    padding-bottom: 5%;
+   
+}
+
+
+
+.wp{
+    width: 5vh;
+}
+
+@media (max-width: 950px){
+
+footer{
+    margin-top: 10vh;
+}
+@media (max-width: 322px){
+
+    footer{
+        padding-bottom: 6vh;
+    }
+
+}
+
+}

@@ -1,0 +1,44 @@
+{% extends 'ProyectoCoderApp/base1.html' %}
+{% load static %}
+
+{% block tituloPagina %}
+Formulario Estudiante - App Coder
+{% endblock %}
+
+{% block b2 %}
+<br>
+
+<br>
+
+<br>
+<section class="bg-light py-5">
+    <div class="container px-5">
+        <h2>Crea tu posteo:</h2>
+        <br>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+
+                <div class="card">
+                    <div class="card-header text-center">
+                        
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                        
+                            <!-- <p>Curso: <input type="text" name="nombre" id="" maxlength="30"> </p>
+                            <p>Comision: <input type="number" name="comision" id="" min="0"> </p> -->
+                        
+                            {{ form.as_p }}
+                        
+                            <input type="submit"  value="Publicar">
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
