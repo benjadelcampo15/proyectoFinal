@@ -23,7 +23,7 @@ class Posteo(models.Model):
     titulo = models.CharField(max_length=30) # Texto
     cuerpo = models.CharField(max_length=30) # Texto
     fecha = models.DateField()
-    imagen = models.ImageField()
+    imagen = models.ImageField(upload_to='media', blank=True, null=True)
     
      # Email - Opcional
 
