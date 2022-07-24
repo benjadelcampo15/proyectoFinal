@@ -12,7 +12,7 @@ class posteoCrear(forms.Form):
     titulo = forms.CharField(max_length=20)
     cuerpo = forms.CharField(max_length=200)   
     fecha = forms.DateField()
-    imagen = forms.ImageField()
+    imagen = forms.ImageField(label="Imagen", required=False)
     
     
 
