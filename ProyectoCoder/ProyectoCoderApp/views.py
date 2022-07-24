@@ -132,11 +132,11 @@ def crearPosteos(request):
 
             return redirect("posteos")
 
-        return render(request,"ProyectoCoderApp/posteos.html",{"form":formulario})
+        return render(request,"ProyectoCoderApp/crearPosteos.html",{"form":formulario})
 
     # get
      formulario = posteoCrear()
-     return render(request,"ProyectoCoderApp/posteos.html",{"form":formulario})
+     return render(request,"ProyectoCoderApp/crearPosteos.html",{"form":formulario})
 
 
 
