@@ -3,23 +3,32 @@
 {% block tituloPagina %}
 Register - App Coder
 {% endblock %}
+
 {% block b2 %}
-
 <section class="bg-light py-5">
-    <div class="container px-5">
-       
-        <ul class="posteos">
-
-            {% for posteo in posteos %}
-
-            <li> {{posteo.titulo}}</li>
-            <li> {{posteo.cuerpo}}</li>
-            <li>{{posteo.fecha}}</li>
-            <li><img src="{{posteo.imagen}}" ></li>
-            
-            {% endfor %}
-        </ul>
-    </div>
+    <section class="bg-light py-5">
+        <div class="container px-6">
+            <div class="row gx-5justify-content-center">
+            <h3>Posteos:</h3>
+                {% for post in posteos %}
+                <label class="list-group-item d-flex gap-3">
+                <span class="pt-1 form-checked-content">
+                    <tr>
+                        <h6><strong style="font-size: 150%">{{post.titulo}}</strong></h6>
+                        <h6><strong style="font-size: 115%">subtitulo</strong></h6>
+                    </tr>
+                    <small class="d-block text-muted">
+                        <tr>
+                        <p>{{post.fecha}}</p>
+                        <p>{{post.cuerpo}}</p>
+                        <p><img src="{{posteo.imagen}}"></p>
+                        </tr>
+                    </small>
+                </span>
+                </label>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 </section>
-
 {% endblock %}
